@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Etch-a-Sketch</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Etch-a-Sketch</h1>
+        </header>
+        
+        <div class="container"></div>
+        
+        <div class="buttons">
+            <button onclick="clearGrid()">Clear</button>
+            <button class="rainbowBtn" onClick="turnOnRainbow()">Rainbow Mode</button>
+        </div>
+
+        <div class="slideContainer">
+            <div>Size</div>
+            <input type="range" min="16" max="64" value="16" class="slider" id="sizeSlider" onchange="updateSize(this.value)">
+            <div class="size"></div>
+        </div>
+
+
+        <script src="sketch.js" async defer></script>
+    </body>
+</html>
