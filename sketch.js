@@ -1,6 +1,6 @@
-const slider = document.querySelector('.slider');
+const slider = document.querySelector('.sizeSlider');
 const sizeLabel = document.querySelector('.size');
-sizeLabel.textContent = slider.value;
+sizeLabel.textContent = slider.value + " X " + slider.value;
 let rainbowMode = false;
 
 function createGrid(size)
@@ -26,7 +26,7 @@ function changeColor(e)
     if (rainbowMode)
     {
         const randomColor = Math.floor(Math.random()*16777215).toString(16);
-        e.target.style.backgroundColor = "#" + randomColor.toString();
+        e.target.style.backgroundColor = "#" + randomColor;
     }
     else
     {
@@ -36,7 +36,7 @@ function changeColor(e)
 
 function updateSize(value)
 {
-    sizeLabel.textContent = value;
+    sizeLabel.textContent = slider.value + " X " + slider.value;
     clearGrid();
     createGrid(parseInt(value));
 }
@@ -50,9 +50,10 @@ function clearGrid()
     }
 }
 
-function turnOnRainbow()
+function toggleColorMode()
 {
-    rainbowMode = true;
+    if (rainbowMode) rainbowMode = false;
+    else rainbowMode = true;
 }
 
 createGrid(16);

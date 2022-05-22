@@ -10,21 +10,22 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header>
-            <h1>Etch-a-Sketch</h1>
-        </header>
+        <h1>Etch-a-Sketch</h1>
         
         <div class="container"></div>
         
         <div class="buttons">
             <button onclick="clearGrid()">Clear</button>
-            <button class="rainbowBtn" onClick="turnOnRainbow()">Rainbow Mode</button>
+            <div class="switchLabel">Color Mode:</div>
+            <label class="switch">
+                <input type="checkbox" onchange="toggleColorMode()">
+                <span class="slider"></span>
+            </label>
         </div>
 
         <div class="slideContainer">
-            <div>Size</div>
-            <input type="range" min="16" max="64" value="16" class="slider" id="sizeSlider" onchange="updateSize(this.value)">
             <div class="size"></div>
+            <input type="range" min="16" max="64" value="16" class="sizeSlider" id="sizeSlider" onchange="updateSize(this.value)">
         </div>
 
 
